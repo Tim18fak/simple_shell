@@ -50,7 +50,6 @@ void free_array_of_pointers(char **array)
 	{
 		for (i = 0; array[i]; i++)
 			free(array[i]);
-
 		free(array);
 		array = NULL;
 	}
