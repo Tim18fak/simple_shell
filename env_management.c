@@ -13,7 +13,6 @@ char *env_get_key(char *key, data_of_program *data)
 	/* validate the arguments */
 	if (key == NULL || data->env == NULL)
 		return (NULL);
-
 	/* obtains the leng of the variable requested */
 	key_length = str_length(key);
 
@@ -25,7 +24,6 @@ char *env_get_key(char *key, data_of_program *data)
 			return (data->env[i] + key_length + 1);
 		}
 	}
-	/* returns NULL if did not find it */
 	return (NULL);
 }
 
@@ -37,7 +35,6 @@ char *env_get_key(char *key, data_of_program *data)
  * @data: struct of the program's data
  * Return: 1 if the parameters are NULL, 2 if there is an erroror 0 if sucess.
  */
-
 int env_set_key(char *key, char *value, data_of_program *data)
 {
 	int i, key_length = 0, is_new_key = 1;
@@ -109,7 +106,6 @@ int env_remove_key(char *key, data_of_program *data)
 	}
 	return (0);
 }
-
 
 /**
  * print_environ - prints the current environ
