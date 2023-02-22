@@ -1,11 +1,10 @@
 #include "shell.h"
 
 /**
-* _getline - read one line from the prompt.
-* @data: struct for the program's data
-*
-* Return: reading counting bytes.
-*/
+ * _getline - read a line from the prompt.
+ * @data: struct for the program's data
+ * Return: reading counting bytes.
+ */
 int _getline(data_of_program *data)
 {
 	char buff[BUFFER_SIZE] = {'\0'};
@@ -13,8 +12,8 @@ int _getline(data_of_program *data)
 	static char array_operators[10] = {'\0'};
 	ssize_t bytes_read, i = 0;
 
-	/* check if doesnot exist more commands in the array */
-	/* and checks the logical operators */
+	/*check if doesnot exist more commands in the array*/
+	/* and checks the logical operators*/
 	if (!array_commands[0] || (array_operators[0] == '&' && errno != 0) ||
 		(array_operators[0] == '|' && errno == 0))
 	{
@@ -52,13 +51,12 @@ int _getline(data_of_program *data)
 
 
 /**
-* check_logic_ops - checks and split for && and || operators
-* @array_commands: array of the commands.
-* @i: index in the array_commands to be checked
-* @array_operators: array of the logical operators for each previous command
-*
-* Return: index of the last command in the array_commands.
-*/
+ * check_logic_ops - checks and split for && and || operators
+ * @array_commands: array of the commands.
+ * @i: index in the array_commands to be checked
+ * @array_operators: array of the logical operators for each previous command
+ * Return: index of the last command in the array_commands.
+ */
 int check_logic_ops(char *array_commands[], int i, char array_operators[])
 {
 	char *temp = NULL;
